@@ -15,30 +15,20 @@ const Styleguide = () => {
       <TitleAndMetaTags />
 
       <Box mt={6} mb={8}>
-        <Container size={1}>
-          <Heading size={5} mb={4} sx={{ textAlign: 'center', fontWeight: 500, letterSpacing: '-.052em' }}>
-            The visual code editor
+        <Container size={2}>
+          <Heading size={5} mb={4} sx={{ textAlign: 'center' }}>
+            The fastest way to create a styleguide
           </Heading>
 
           <Heading as="h2" size={2} weight="normal" sx={{ textAlign: 'center', color: 'gray700', lineHeight: '4' }}>
             Keep your team in sync with a styleguide automatically generated from your design system.
           </Heading>
-          <Flex mt={7} sx={{ justifyContent: 'center' }}>
-            <Button size={1} variant="blue">
-              Apply for beta access
-            </Button>
-          </Flex>
-          <Flex mt={3} sx={{ justifyContent: 'center' }}>
-            <Text size={2} sx={{ textAlign: 'center', color: 'gray700', lineHeight: '1' }}>
-              We're currently in private beta.
-            </Text>
-          </Flex>
         </Container>
       </Box>
 
       <Divider mx="auto" size={2} />
       <Box py={9}>
-        <Container size={2} sx={{ maxWidth: '1090px' }}>
+        <Container size={3}>
           <Text
             as="h3"
             size={2}
@@ -65,7 +55,7 @@ const Styleguide = () => {
           </Text>
 
           <Flex mt={8} sx={{ alignItems: 'center' }}>
-            <Box mr={6} sx={{ flexBasis: '0', flexGrow: '1' }}>
+            <Box mr={6} sx={{ flexBasis: 0, flexGrow: 1 }}>
               <img
                 src="/home/editor.png"
                 style={{
@@ -80,7 +70,7 @@ const Styleguide = () => {
                 }}
               />
             </Box>
-            <Box ml={6} sx={{ flexBasis: '0', flexGrow: '1' }}>
+            <Box ml={6} sx={{ flexBasis: 0, flexGrow: 1 }}>
               <Heading as="h3" size={3} mb={3} sx={{ fontWeight: 500, letterSpacing: '-.028em' }}>
                 Live code editor
               </Heading>
@@ -92,7 +82,7 @@ const Styleguide = () => {
           </Flex>
 
           <Flex mt={8} sx={{ alignItems: 'center' }}>
-            <Box mr={6} sx={{ flexBasis: '0', flexGrow: '1' }}>
+            <Box mr={6} sx={{ flexBasis: 0, flexGrow: 1 }}>
               <img
                 src="/home/editor.png"
                 style={{
@@ -107,7 +97,7 @@ const Styleguide = () => {
                 }}
               />
             </Box>
-            <Box ml={6} sx={{ flexBasis: '0', flexGrow: '1' }}>
+            <Box ml={6} sx={{ flexBasis: 0, flexGrow: 1 }}>
               <Heading as="h3" size={3} mb={3} sx={{ fontWeight: 500, letterSpacing: '-.042em' }}>
                 Props table
               </Heading>
@@ -119,7 +109,7 @@ const Styleguide = () => {
           </Flex>
 
           <Flex mt={8} sx={{ alignItems: 'center' }}>
-            <Box mr={6} sx={{ flexBasis: '0', flexGrow: '1' }}>
+            <Box mr={6} sx={{ flexBasis: 0, flexGrow: 1 }}>
               <img
                 src="/home/editor.png"
                 style={{
@@ -134,7 +124,7 @@ const Styleguide = () => {
                 }}
               />
             </Box>
-            <Box ml={6} sx={{ flexBasis: '0', flexGrow: '1' }}>
+            <Box ml={6} sx={{ flexBasis: 0, flexGrow: 1 }}>
               <Heading as="h3" size={3} mb={3} sx={{ fontWeight: 500, letterSpacing: '-.042em' }}>
                 Rich-text editing
               </Heading>
@@ -146,7 +136,7 @@ const Styleguide = () => {
           </Flex>
 
           <Flex mt={8} sx={{ alignItems: 'center' }}>
-            <Box mr={6} sx={{ flexBasis: '0', flexGrow: '1' }}>
+            <Box mr={6} sx={{ flexBasis: 0, flexGrow: 1 }}>
               <img
                 src="/home/editor.png"
                 style={{
@@ -161,7 +151,7 @@ const Styleguide = () => {
                 }}
               />
             </Box>
-            <Box ml={6} sx={{ flexBasis: '0', flexGrow: '1' }}>
+            <Box ml={6} sx={{ flexBasis: 0, flexGrow: 1 }}>
               <Heading as="h3" size={3} mb={3} sx={{ fontWeight: 500, letterSpacing: '-.042em' }}>
                 Pre-built blocks
               </Heading>
@@ -176,7 +166,7 @@ const Styleguide = () => {
       <Box py={9} sx={{ backgroundColor: 'hsl(210,25%,97%)' }}>
         <Container size={2} sx={{ maxWidth: '1090px' }}>
           <Flex sx={{ alignItems: 'center' }}>
-            <Box mr={6} sx={{ flexBasis: '0', flexGrow: '1' }}>
+            <Box mr={6} sx={{ flexBasis: 0, flexGrow: 1 }}>
               <img
                 src="/home/editor.png"
                 style={{
@@ -191,7 +181,7 @@ const Styleguide = () => {
                 }}
               />
             </Box>
-            <Box ml={6} sx={{ flexBasis: '0', flexGrow: '1' }}>
+            <Box ml={6} sx={{ flexBasis: 0, flexGrow: 1 }}>
               <Text
                 as="h3"
                 size={2}

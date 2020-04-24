@@ -9,6 +9,7 @@ export const MarketingButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
     {...props}
     sx={{
       position: 'relative',
+      zIndex: '1',
       display: 'inline-flex',
       alignItems: 'center',
       fontFamily: 'normal',
@@ -33,7 +34,7 @@ export const MarketingButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         zIndex: '-1',
         backgroundColor: 'white',
         transition: 'all 50ms ease',
-        boxShadow: (theme) => `inset 0 0 0 1px ${theme.colors.blue400}`,
+        boxShadow: (theme) => `inset 0 0 0 1px currentColor`,
       },
       '&::after': {
         content: "''",
@@ -45,16 +46,18 @@ export const MarketingButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
         left: '6px',
         zIndex: '-2',
         pointerEvents: 'none',
+        opacity: 0.4,
         backgroundImage: (theme) => `repeating-linear-gradient(
 			-45deg,
-			${theme.colors.blue600},
-			${theme.colors.blue600} 1px,
+			currentColor,
+			currentColor 1px,
 			transparent 1px,
 			transparent 6px
 		)`,
       },
-      '&:hover::before, &:active::before, &:focus::before': {
-        boxShadow: (theme) => `inset 0 0 0 1px ${theme.colors.blue600}`,
+      '&:hover::after, &:active::after, &:focus::after': {
+        // boxShadow: (theme) => `inset 0 0 0 1px currentColor`,
+        opacity: 1,
       },
       '&:active': {
         transform: 'translate(1px, 1px)',

@@ -29,9 +29,7 @@ export const Header = () => {
               padding: '0',
             }}
           >
-            <Text size={3} sx={{ color: 'gray700' }}>
-              Product
-            </Text>
+            <Text size={3} sx={{ color: 'gray700', lineHeight: 1 }}>Product</Text>
           </button>
           <Popover targetRef={buttonRef} isOpen={isOpen} onClose={() => setIsOpen(false)}>
             <Box px={3} py={2}>
@@ -67,28 +65,28 @@ export const Header = () => {
               </Text>
             </Box>
           </Popover>
-          <Text size={3} sx={{ color: 'gray700' }} ml={7}>
+          <Text size={3} ml={7} sx={{ color: 'gray700', lineHeight: 1 }}>
             <NextLink href="/about" passHref>
               <Link sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }}>About</Link>
             </NextLink>
           </Text>
-          <Text size={3} sx={{ color: 'gray700' }} ml={7}>
+          <Text size={3} ml={7} sx={{ color: 'gray700', lineHeight: 1 }}>
             <NextLink href="/learn" passHref>
               <Link sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }}>Learn</Link>
             </NextLink>
           </Text>
-          <Text size={3} sx={{ color: 'gray700' }} ml={7}>
+          <Text size={3} ml={7} sx={{ color: 'gray700', lineHeight: 1 }}>
             <NextLink href="/blog" passHref>
               <Link sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }}>Blog</Link>
             </NextLink>
           </Text>
-          <Text size={3} sx={{ color: 'gray700' }} ml={7}>
+          <Text size={3} ml={7} sx={{ color: 'gray700', lineHeight: 1 }}>
             <NextLink href="/pricing" passHref>
               <Link sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }}>Pricing</Link>
             </NextLink>
           </Text>
           <Pipe mx={5} />
-          <Text size={3} sx={{ color: 'gray700' }}>
+          <Text size={3} sx={{ color: 'gray700', lineHeight: 1 }}>
             <Link href="https://modulz.app/login" sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }}>
               Login
             </Link>

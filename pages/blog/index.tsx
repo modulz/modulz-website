@@ -21,7 +21,7 @@ const Blog = () => {
         </Text>
       </Container>
 
-      <Container size={2} my={8} sx={{ maxWidth: '1090px' }}>
+      <Container size={3} my={8}>
         <BlogCardGrid>
           {blogPosts.map((frontMatter: FrontMatter) => (
             <Box my={4} key={frontMatter.title}>

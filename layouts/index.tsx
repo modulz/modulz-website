@@ -30,7 +30,7 @@ export default (frontMatter: FrontMatter) => {
       <React.Fragment>
         <TitleAndMetaTags title={frontMatter.title} description={frontMatter.summary} />
 
-        <Container size={1} mt={6} sx={{ maxWidth: '600px' }}>
+        <Container size={1} mt={6}>
           <Heading size={3} mb={1} sx={{ fontWeight: 500 }}>
             {frontMatter.title}
           </Heading>

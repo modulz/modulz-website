@@ -10,7 +10,7 @@ const Pricing = () => {
 
       <Box mt={6} mb={8}>
         <Container size={1}>
-          <Heading size={5} mb={4} sx={{ textAlign: 'center', fontWeight: 500, letterSpacing: '-.052em' }}>
+          <Heading size={5} mb={4} sx={{ textAlign: 'center' }}>
             About
           </Heading>
 

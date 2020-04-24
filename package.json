@@ -11,12 +11,13 @@
   "dependencies": {
     "@mapbox/rehype-prism": "^0.4.0",
     "@mdx-js/loader": "^1.5.8",
-    "@modulz/radix": "0.0.1-beta.31",
-    "@modulz/radix-icons": "^2.0.0",
+    "@modulz/radix": "0.0.1-beta.38",
+    "@modulz/radix-icons": "^2.1.0",
     "@next/mdx": "^9.3.3",
     "@segment/snippet": "^4.4.0",
     "babel-plugin-import-glob-array": "^0.2.0",
     "date-fns": "^2.10.0",
+    "gsap": "^3.2.6",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^7.1.0",
     "mdx-prism": "^0.3.1",
@@ -28,6 +29,7 @@
     "prismjs": "^1.19.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-ticker": "^1.2.2",
     "reading-time": "^1.2.0",
     "styled-components": "^5.0.1"
   },
