@@ -1,5 +1,6 @@
 import React from 'react';
 import NextLink from 'next/link';
+import { useRouter } from 'next/router'
 import {
   Container,
   Box,
@@ -13,14 +14,39 @@ import {
   Heading,
   Divider,
   VisuallyHidden,
+  IconButton,
 } from '@modulz/radix';
 import { Logo } from './Logo';
 import { HideInProd } from './HideInProd';
-import { PlusIcon } from '@modulz/radix-icons';
+import { PlusIcon, HamburgerIcon, CrossIcon } from '@modulz/radix-icons';
 
 export const Header = () => {
+  const { route } = useRouter();
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isNavOpen, setIsNavOpen] = React.useState(false);
   const buttonRef = React.useRef<HTMLButtonElement>(null);
+
+  function closeNav() {
+    setIsNavOpen(false);
+  }
+
+  function toggleNav() {
+    setIsNavOpen(!isNavOpen);
+  }
+
+  React.useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflowY = 'scroll';
+      document.body.style.position = 'fixed';
+    } else {
+      document.body.style.overflowY = '';
+      document.body.style.position = '';
+    }
+    return () => {
+      document.body.style.overflowY = '';
+      document.body.style.position = '';
+    }
+  }, [isNavOpen]);
 
   return (
     <Container size={2} sx={{ maxWidth: 'none' }}>
@@ -37,6 +63,7 @@ export const Header = () => {
             ref={buttonRef}
             onClick={() => setIsOpen(true)}
             sx={{
+              display: ['none', 'block'],
               py: 1,
               px: 2,
               borderRadius: 1,
@@ -79,7 +106,10 @@ export const Header = () => {
                   py={2}
                   px={4}
                   sx={{ textDecoration: 'none', color: 'inherit', display: 'block', ':hover': { bg: 'gray200' } }}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    setIsOpen(false);
+                    closeNav();
+                  }}
                 >
                   <Heading size={0}>
                     Style guide
@@ -106,40 +136,98 @@ export const Header = () => {
             </Box>
           </Popover>
 
-          <Text size={3} sx={{ color: 'gray700' }} ml={[2, 6]}>
+          <Text size={3} sx={{ color: 'gray700', display: ['none', 'block'] }} ml={[2, 6]}>
             <NextLink href="/about" passHref>
               <Link sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }}>About</Link>
             </NextLink>
           </Text>
           <HideInProd>
-            <Text size={3} sx={{ color: 'gray700' }} ml={[4, 7]}>
+            <Text size={3} sx={{ color: 'gray700', display: ['none', 'block'] }} ml={[4, 7]}>
               <NextLink href="/learn" passHref>
                 <Link sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }}>Learn</Link>
               </NextLink>
             </Text>
           </HideInProd>
-          <Text size={3} sx={{ color: 'gray700' }} ml={[4, 7]}>
+          <Text size={3} sx={{ color: 'gray700', display: ['none', 'block'] }} ml={[4, 7]}>
             <NextLink href="/blog" passHref>
               <Link sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }}>Blog</Link>
             </NextLink>
           </Text>
           <HideInProd>
-            <Text size={3} sx={{ color: 'gray700' }} ml={[4, 7]}>
+            <Text size={3} sx={{ color: 'gray700', display: ['none', 'block'] }} ml={[4, 7]}>
               <NextLink href="/pricing" passHref>
                 <Link sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }}>Pricing</Link>
               </NextLink>
             </Text>
           </HideInProd>
 
-          <Pipe mx={[2, 5]} />
+          <Pipe mx={[2, 5]} sx={{ display: ['none', 'block'] }} />
 
-          <Text size={3} sx={{ color: 'gray700' }}>
+          <Text size={3} sx={{ color: 'gray700', display: ['none', 'block'] }}>
             <Link href="https://core.modulz.app" sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }}>
               Login
             </Link>
           </Text>
+
+          <Box sx={{ display: ['block', 'none'] }}>
+            <IconButton aria-label={isNavOpen ? 'Close menu' : 'Open menu'} onClick={toggleNav} isActive={isNavOpen}>
+              {isNavOpen ? <CrossIcon /> : <HamburgerIcon />}
+            </IconButton>
+          </Box>
         </Flex>
       </Flex>
+
+      {isNavOpen && (
+        <Box sx={{ background: 'white', height: '100vh', display: ['block', 'none']}}>
+          <Text size={3} sx={{ color: route === '/about' ? 'blue700' : 'gray700', display: 'block', py: 1, px: 2 }}>
+            <NextLink href="/about" passHref>
+              <Link sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }} onClick={closeNav}>About</Link>
+            </NextLink>
+          </Text>
+          <ChromelessButton
+            ref={buttonRef}
+            onClick={() => setIsOpen(true)}
+            sx={{
+              py: 1,
+              px: 2,
+              mt: 2,
+              borderRadius: 1,
+              bg: isOpen ? 'gray200' : undefined,
+              ':hover': { bg: 'gray200' },
+            }}
+          >
+            <Text size={3} sx={{ color: route === '/styleguide' ? 'blue700' : 'gray700', display: ['block', 'none'] }}>
+              <Flex as="span" sx={{ alignItems: 'center' }}>
+                Product
+                <Box as="span" ml={1}>
+                  <PlusIcon />
+                </Box>
+              </Flex>
+            </Text>
+          </ChromelessButton>
+          <HideInProd>
+            <Text size={3} sx={{ color: route === '/learn' ? 'blue700' : 'gray700', display: 'block', mt: 2, py: 1, px: 2 }}>
+              <NextLink href="/learn" passHref>
+                <Link sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }} onClick={closeNav}>Learn</Link>
+              </NextLink>
+            </Text>
+          </HideInProd>
+          <HideInProd>
+            <Text size={3} sx={{ color: route === '/blog' ? 'blue700' : 'gray700', display: 'block', mt: 2, py: 1, px: 2 }}>
+              <NextLink href="/blog" passHref>
+                <Link sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }} onClick={closeNav}>Blog</Link>
+              </NextLink>
+            </Text>
+          </HideInProd>
+          <HideInProd>
+            <Text size={3} sx={{ color: route === '/pricing' ? 'blue700' : 'gray700', display: 'block', mt: 2, py: 1, px: 2 }}>
+              <NextLink href="/pricing" passHref>
+                <Link sx={{ color: 'inherit', ':focus': { boxShadow: 'none' } }} onClick={closeNav}>Pricing</Link>
+              </NextLink>
+            </Text>
+          </HideInProd>
+        </Box>
+      )}
     </Container>
   );
 };
