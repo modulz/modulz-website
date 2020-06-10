@@ -42,6 +42,10 @@ export const Header = () => {
       document.body.style.overflowY = '';
       document.body.style.position = '';
     }
+    return () => {
+      document.body.style.overflowY = '';
+      document.body.style.position = '';
+    }
   }, [isNavOpen]);
 
   return (
