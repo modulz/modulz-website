@@ -25,7 +25,7 @@
     "next-mdx-enhanced": "^5.0.0",
     "next-optimized-images": "^2.6.0",
     "next-videos": "^1.1.4",
-    "prismjs": "^1.19.0",
+    "prismjs": "^1.21.0",
     "radix-ds": "^0.5.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
